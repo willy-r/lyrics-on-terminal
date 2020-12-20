@@ -95,6 +95,7 @@ def print_lyric(artist: str,
     by = artist.title()
     title = song_name
     if translate:
+        by = _black_white(by, 'bold', 'underline')
         title = f'{song_name}\n{_black_white(translated_name, "bold")}'
         lyric_lines = lyric.splitlines()
         translation_lines = translation.splitlines()
@@ -104,7 +105,7 @@ def print_lyric(artist: str,
             for line in lines
         ])
 
-    print(_black_white(by, 'bold', 'underline'))
+    print(by)
     print(title, end='\n\n')
     print(lyric)
 
